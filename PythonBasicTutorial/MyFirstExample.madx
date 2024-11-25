@@ -1,0 +1,41 @@
+! *********************************************************************
+! Definition of parameters
+! *********************************************************************
+
+l_cell=200;
+quadrupoleLenght=10;
+f=200;
+myK:=1/f/quadrupoleLenght;// m^-2
+
+! *********************************************************************
+! Definition of magnets
+! ********************************************************************* 
+QF: quadrupole, L=quadrupoleLenght, K1:=myK;
+QD: quadrupole, L=quadrupoleLenght, K1:=-myK;
+
+! *********************************************************************
+! Definition of sequence
+! *********************************************************************
+myCell:sequence, refer=entry, L=L_CELL;
+quadrupole1: QF, at=0;
+marker1: marker, at=50;
+quadrupole2: QD, at=100;
+marker2: marker, at=200;
+endsequence;
+
+! *********************************************************************
+! Definition of beam
+! *********************************************************************
+beam, particle=electron, energy=2;
+
+! *********************************************************************
+! Use of the sequence
+! *********************************************************************
+use, sequence=myCell;
+
+! *********************************************************************
+! TWISS
+! *********************************************************************
+title, 'My first twiss';
+twiss, file=MyfirstTwiss.madx;
+plot, haxis=s, vaxis=betx,bety,dx,colour=100, title="test",file=MyfirstTwiss;
