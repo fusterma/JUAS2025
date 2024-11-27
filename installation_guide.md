@@ -42,13 +42,13 @@ We suggest to install the **Anaconda** distribution from [here](https://www.anac
 
 The installation process clearly depends on your operating system. We suggest you to follow the official documentation for [Windows](https://docs.anaconda.com/anaconda/install/windows/), [Linux](https://docs.anaconda.com/anaconda/install/linux/), or [Mac](https://docs.anaconda.com/anaconda/install/mac-os/) as appropriate. After having installed **Anaconda** we invite you to [verify your installation](https://docs.anaconda.com/anaconda/install/verify-install/) - as suggested in the [installation documentation](https://docs.anaconda.com/anaconda/install/).
 
-Then, check that you have installed the main python packages (`numpy`, `matplotlib`, `jupyter`, `jupyterlab`, `cpymad` and `pandas`) needed for the workshop. In order to do that you can open a Consol from the Anaconda Navigator and use the `pip` package management system. Note that you may need to install it before using the following command:
+Then, check that you have installed the main python packages (`numpy`, `matplotlib`, `jupyter`, `jupyterlab`, `cpymad` and `pandas`) needed for the workshop. In order to do that, you can open a Consol from the Anaconda Navigator and use the `pip` package management system. Note that you may need to install it before using the following command:
 
 ```
 conda install pip
 ``` 
 
-Then, you can check for the installed packages you can type:
+Then, you can check for the installed packages by typing:
 
 ```
 pip list
@@ -66,41 +66,23 @@ Finally, we invite you to start [launching Jupyter Lab](#launch-jupyter) and tes
 
 Once the installation of **Anaconda** is finalised or within your existing Python distribution, you should be able to start Jupyter from a terminal:
 
-1. Open a (Anaconda) terminal on your operating system:
-    - **Windows:**
-        From the Start menu, search for and open “Anaconda Prompt”.
-    - **macOS:**
-        Open Launchpad, then click the terminal icon.
-    - **Linux:**
-        Open a terminal window.
-
-2. Launch Jupyter from your terminal:
-
-    ```bash
-    jupyter notebook
-    ```
-    or, in case you want a jupyter lab server
-    
-    ```bash
-    jupyter lab
-    ```
-    
-3. Follow the instructions given in the terminal. You should end-up on your default browser with a page similar to the following (in the case of the JupyterLab):
+1. Open the Anaconda Navigator on your operating system.
+ 
+2. Launch JupyterLab from there. You should end-up on your default browser with a page similar to the one below. You can open a new Jupyter notebook or use the navigator on the left to browse through your folders and files to locate where you have saved the example Jupyter notebook.
 
 <p align="center">
 <img src="./Figures/JupyterLab.png" width="80%"/></a>
 </p>
 
-    On the left hand side of the widows you should see all files under the folder in your operating system where you executed the `jupyter lab` command. This will be your **working directory**. This interface allows you to move quickly through different opened files. 
 
-4. Now you can start playing with Python!  
+3. Now you can start playing with Python!  
 
 Please, make sure to go throw all [this Jupyter-notebook](PythonBasicTutorial/PythonBasic.ipynb) (in order to run all the examples you need also to download [MyFirstExample.madx](PythonBasicTutorial/MyFirstExample.madx) and [TutorialLibraryOfFunctions.py](PythonBasicTutorial/TutorialLibraryOfFunctions.py)) to familiarise with the typical Python concepts that will be used during the course, but also to verify your installation. If you happen to experience any problem, please check to have installed the whole anaconda distribution. Alternatively, you can try to go back to your terminal, and install each single (or missing) package independently, e.g.:
 
 ```python
 pip install numpy matplotlib jupyter jupyterlab cpymad pandas
 ```
-If your installation problems persist you can check if they are compiled in the list of [appendix A](#appendix-a-installation-pitfalls) (Installation pitfalls) or you can contact us (nuria.fuster@ific.uv.es, guido.sterbini@cern.ch, davide.gamba@cern.ch), we will be happy to help you! 
+If your installation problems persist you can check if they are compiled in the list of [appendix A](#appendix-a-installation-pitfalls) (Installation pitfalls) or you can contact us (nuria.fuster@ific.uv.es, davide.gamba@cern.ch, sofia.kostoglou@cern.ch), we will be happy to help you! 
 
 Finally, **just before the start of the course**, we will ask you to download the **latest version** of the [MAD-X Workshop JUAS2025 repository](https://github.com/fusterma/JUAS2025/zipball/master) in your **working directory**.
 
@@ -126,7 +108,7 @@ In the following appendix, we collect some problems that you can experience depe
 
 ## Appendix B Python Packages
 
-You can leverage python's capability by exploring a galaxy of packages. Below you can find the most useful for our course (focus mostly on `numpy`, `matplotlib` and `pandas`). The cpymad library is the one used to link the Python environment with the MAD-X software (from all the methods included in this library during the MAD-X workshop we will focus only on the `call`,`input`, `table.twiss.dframe`, `table.summ.dframe` and `table.track.dframe` methods, you can find an example of how to use it [here](PythonBasicTutorial/PythonBasic.ipynb) (in order to run all the examples you need also to download [MyFirstExample.madx](PythonBasicTutorial/MyFirstExample.madx) and [TutorialLibraryOfFunctions.py](PythonBasicTutorial/TutorialLibraryOfFunctions.py))).
+You can leverage python's capability by exploring a galaxy of packages. Below you can find the most useful for our course (focus mostly on `numpy`, `matplotlib` and `pandas`). The cpymad library is the one used to link the Python environment with the MAD-X software (from all the methods included in this library during the MAD-X workshop we will focus only on the `call`,`input`, `table.twiss.dframe`, `table.summ.dframe` and `table.track.dframe` methods, you can find an example of how to use it [here](PythonBasicTutorial/PythonBasic.ipynb) (in order to run all the examples you need also to download [MyFirstExample.madx](PythonBasicTutorial/MyFirstExample.madx) and [TutorialLibraryOfFunctions.py](PythonBasicTutorial/TutorialLibraryOfFunctions.py)).
 
 ### The *numpy* package
 To get familiar with the *numpy* package have a look at the following [summary poster](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf).
