@@ -36,19 +36,19 @@ You can find an overview on JupyterLab [here](https://jupyterlab.readthedocs.io/
 
 ## Installation
 
-We suggest to install the **Anaconda** distribution from [here](https://www.anaconda.com/download)
+We suggest to install the **Anaconda** distribution from [here](https://www.anaconda.com/download). In order to download you may need to register.
 
-> We suggest to install one of the latest distribution (**for example version Python 3.11**).
+> We suggest to install one of the latest distribution (**for example version Python 3.12**). 
 
 The installation process clearly depends on your operating system. We suggest you to follow the official documentation for [Windows](https://docs.anaconda.com/anaconda/install/windows/), [Linux](https://docs.anaconda.com/anaconda/install/linux/), or [Mac](https://docs.anaconda.com/anaconda/install/mac-os/) as appropriate. After having installed **Anaconda** we invite you to [verify your installation](https://docs.anaconda.com/anaconda/install/verify-install/) - as suggested in the [installation documentation](https://docs.anaconda.com/anaconda/install/).
 
-Then, check that you have installed the main python packages (`numpy`, `matplotlib`, `jupyter`, `jupyterlab`, `cpymad` and `pandas`) needed for the workshop. In order to do that you can use the `pip` package management system. Note that you may need to install it using the following command:
+Then, check that you have installed the main python packages (`numpy`, `matplotlib`, `jupyter`, `jupyterlab`, `cpymad` and `pandas`) needed for the workshop. In order to do that you can open a Consol from the Anaconda Navigator and use the `pip` package management system. Note that you may need to install it before using the following command:
 
 ```
 conda install pip
 ``` 
 
-Then, you can check for the installed packages by typing in the **terminal** (Mac and Linux) or in the **cmd window** or **Anaconda Prompt** (Windows) the following command:
+Then, you can check for the installed packages you can type:
 
 ```
 pip list
