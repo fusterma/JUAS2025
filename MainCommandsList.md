@@ -1,6 +1,6 @@
 # Main commands list
 
-**N. Fuster-Marti­nez, G. Sterbini, D. Gamba, S. Kostoglou, J. Olivares** 
+**N. Fuster-Marti­nez, D. Gamba, S. Kostoglou** 
 
 ## MAD-X commands
 
@@ -32,13 +32,15 @@
 
 **Twiss action:**
 
+    select, flag = twiss, column = name, keyword, s, betx, bety;
+    
 	twiss, sequence = name, centre, file = filename.txt, table = name;
-        twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??, centre, file = filename.txt, table = name;
-        select, flag = twiss, column = name, keyword, s, betx, bety;
-        plot, haxis = s, vaxis = betx, color = 100, file = name;
+    
+    twiss, sequence = name, betx = ??, alfx = ??, bety = ??, alfy = ??, centre, file =filename.txt, table = name;
+    
+    plot, haxis = s, vaxis = betx, color = 100, file = name;
    
 **Matching action:**
-
 
 	match, sequence = ??;
 	global, q1 = ??;
@@ -65,6 +67,7 @@
 	start, x = ??, px = ?? , y = ??, py = ??;
 	start, x = ??, px = ?? , y = ??, py = ??;
 	run, turns = 100;
+    endtrack;   
 
         
 ## Cpymad library functions
@@ -86,10 +89,16 @@
 	
 	
 	madx.table.twiss.dframe()
-    	madx.table.twiss.dframe()
+ 
+    
+    madx.table.twiss.dframe()
 
  
 ## Python plot commands
+
+**First, we need to load the matplotlib library:**
+    
+    from matplotlib.pyplot as plt 
 
 **To change the size of the plot window:**
 
