@@ -6,29 +6,29 @@
 
 **Lattice elements definition:**
         
-        mb : sbend, angle = ??, l = ??; 
-        mq : quadrupole, k1 = ??, l = ??;
-        ms : sextupole, k2 = ??, l = ??;
+    mb : sbend, angle = ??, l = ??; 
+    mq : quadrupole, k1 = ??, l = ??;
+    ms : sextupole, k2 = ??, l = ??;
 
 **Sequence definition:**
 
-        sequencename : sequence, refer = centre, l = ??;
-        element1: elementType1, at = ??;
-        element1: elementType1, at = ??;
-        ...
-        endsequence;
+    sequencename : sequence, refer = centre, l = ??;
+    element1: elementType1, at = ??;
+    element1: elementType1, at = ??;
+    ...
+    endsequence;
 
 **Sequence activation:**
 
-        use, sequence = sequencename;
+    use, sequence = sequencename;
 
 **Call an external file:**
 
-        call, file = name;
+    call, file = name;
 
 **Beam definition:**
 
-        beam, particle = proton, energy = 7000;
+    beam, particle = proton, energy = 7000;
 
 **Twiss action:**
 
@@ -60,7 +60,7 @@
 	endmatch;
 
 
-** Tracking action:**
+**Tracking action:**
 
 
 	track, dump, file = name, deltap = ??;
