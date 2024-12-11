@@ -36,7 +36,7 @@ You can find an overview on JupyterLab [here](https://jupyterlab.readthedocs.io/
 
 ## Installation
 
-We suggest to install the **Anaconda** distribution from [here](https://www.anaconda.com/download). In order to download it you will need to register and access with a given username and password.
+We suggest to install the **Anaconda** distribution from [here](https://www.anaconda.com/download). In order to download it you will need to register with a personal email adress.
 
 > We suggest to install one of the latest distribution (**for example version Python 3.12**). 
 
@@ -64,18 +64,18 @@ Finally, we invite you to start [launching Jupyter Lab](#launch-jupyter) and tes
 
 # Launch Jupyter
 
-Once the installation of **Anaconda** is finalised or within your existing Python distribution, you should be able to start Jupyter from a terminal:
+Once the installation of **Anaconda** is finalised or within your existing Python distribution, you should be able ontinue with the following steps:
 
 1. Open the Anaconda Navigator on your operating system.
  
-2. Launch JupyterLab from there. You should end-up on your default browser with a page similar to the one below. You can open a new Jupyter notebook or use the navigator on the left to browse through your folders and files to locate where you have saved the example Jupyter notebook.
+2. Launch JupyterLab from there. You should end-up on your default browser with a page similar to the one below. You can open a new Jupyter notebook or use the navigator on the left to browse through your folders and files to locate where you have saved the example Jupyter notebook you want to run.
 
 <p align="center">
 <img src="./Figures/JupyterLab.png" width="80%"/></a>
 </p>
 
 
-3. Now you can start playing with Python!  
+Now you can start playing with Python!  
 
 Please, make sure to go throw all [this Jupyter-notebook](PythonBasicTutorial/PythonBasic.ipynb) (in order to run all the examples you need also to download [MyFirstExample.madx](PythonBasicTutorial/MyFirstExample.madx) and [TutorialLibraryOfFunctions.py](PythonBasicTutorial/TutorialLibraryOfFunctions.py)) to familiarise with the typical Python concepts that will be used during the course, but also to verify your installation. If you happen to experience any problem, please check to have installed the whole anaconda distribution. Alternatively, you can try to go back to your terminal, and install each single (or missing) package independently, e.g.:
 
