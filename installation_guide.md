@@ -36,7 +36,7 @@ You can find an overview on JupyterLab [here](https://jupyterlab.readthedocs.io/
 
 ## Installation
 
-We suggest to install the **Anaconda** distribution from [here](https://www.anaconda.com/download). In order to download you may need to register.
+We suggest to install the **Anaconda** distribution from [here](https://www.anaconda.com/download). In order to download it you will need to register and access with a given username and password.
 
 > We suggest to install one of the latest distribution (**for example version Python 3.12**). 
 
