@@ -47,7 +47,7 @@
 	global, q2 = ??;
 	vary, name = ??, step = 0.00001;
 	vary, name = ??, step = 0.00001;
-	lmdif, call = 50, tolerance = 1e-6;
+	lmdif, calls = 50, tolerance = 1e-6;
 	endmatch;
 
 	
@@ -56,7 +56,7 @@
 	constraint, range = #e, alfx = ??;
 	vary, name = ??, step = 0.00001;
 	vary, name = ??, step = 0.00001;
-	lmdif, call = 50, tolerance = 1e-6;
+	lmdif, calls = 50, tolerance = 1e-6;
 	endmatch;
 
 
@@ -88,10 +88,6 @@
 	
 	
 	madx.table.twiss.dframe()
- 
-    
-    madx.table.twiss.dframe()
-
  
 ## Python plot commands
 
