@@ -1,0 +1,88 @@
+! *********************************************************************
+! Definition of parameters
+! *********************************************************************
+
+l_cell=100;
+quadrupoleLength=1;
+dipoleLength=15;
+cellLength=100;
+nBend=736;
+
+myKF=0.005;
+myKD:=0.005;
+
+myAngle:=2*pi/nBend;
+
+! *********************************************************************
+! Definition of magnets
+! ********************************************************************* 
+
+QF: quadrupole, L=quadrupoleLength, K1:=myKF;
+QD: quadrupole, L=quadrupoleLength, K1:=-myKD;
+BM: sbend, L=dipoleLength, angle:=myAngle; 
+
+! *********************************************************************
+! Definition of sequence
+! *********************************************************************
+
+myCell:sequence, refer=centre, L=l_cell; ! Here the reference is set to the centre of the element in order to use the makethin command
+q1: QF, at=0+quadrupoleLength/2;
+B1: BM, at =5+quadrupoleLength/2+dipoleLength/2, from=q1;
+B2: BM, at =5+dipoleLength, from=b1;
+q2: QD, at=l_cell/2+quadrupoleLength/2;
+B3: BM, at =5+quadrupoleLength/2+dipoleLength/2, from=q2;
+B4: BM, at =5+dipoleLength, from=b3;;
+endsequence;
+
+! *********************************************************************
+! Definition of the beam
+! *********************************************************************
+
+beam, particle=proton, energy=7000;
+
+! *********************************************************************
+! Activation of sequence
+! *********************************************************************
+
+use, sequence=myCell;
+
+! *********************************************************************
+! Makethin
+! *********************************************************************
+
+select, flag=makethin, slice=10;
+makethin, sequence = myCell;
+use, sequence=myCell;
+
+! *********************************************************************
+! Twiss before matching
+! *********************************************************************
+
+twiss, table = beforematching;
+
+! *********************************************************************
+! Matching q1=q2=0.25
+! *********************************************************************
+
+match, sequence=myCell;
+global, q1=0.25;
+global, q2=0.25;
+vary, name=mykf, step=0.00001;
+vary, name=mykd, step=0.00001;
+lmdif, calls=50, tolerance=1e-6;
+endmatch;
+
+! *********************************************************************
+! Twiss after matching
+! *********************************************************************
+
+twiss, table=AfterMatching;
+
+! *********************************************************************
+! Final tune values and chromaticity
+! *********************************************************************
+
+value, table(summ, q1);
+value, table(summ, q1);
+value, table(summ, dq1);
+value, table(summ, dq2);

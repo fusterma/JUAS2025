@@ -1,0 +1,28 @@
+! FODO lattice MAD-X statements definition
+! *********************************************************************
+! Definition of parameters
+! *********************************************************************
+
+l_cell=100;
+quadrupolelength=1;
+f=200;
+myk:=1/f/quadrupolelength;
+
+! *********************************************************************
+! Definition of magnets
+! ********************************************************************* 
+
+qf: quadrupole, l=quadrupolelength, k1:=myk;
+qd: quadrupole, l=quadrupolelength, k1:=-myk;
+
+
+! *********************************************************************
+! Definition of sequence
+! *********************************************************************
+
+myCell:sequence, refer=entry, l=l_cell;
+quadrupole1: qf, at=0;
+marker1: marker, at=25;
+quadrupole2: qd, at=50;
+marker2: marker, at=75;
+endsequence;

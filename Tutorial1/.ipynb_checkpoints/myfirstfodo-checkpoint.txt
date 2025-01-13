@@ -1,0 +1,62 @@
+@ NAME             %05s "TWISS"
+@ TYPE             %05s "TWISS"
+@ SEQUENCE         %06s "MYCELL"
+@ PARTICLE         %06s "PROTON"
+@ MASS             %le        0.9382720882
+@ CHARGE           %le                   1
+@ ENERGY           %le                   2
+@ PC               %le         1.766251819
+@ GAMMA            %le          2.13157785
+@ KBUNCH           %le                   1
+@ BCURRENT         %le     3.746073978e-13
+@ SIGE             %le               0.001
+@ SIGT             %le                   1
+@ NPART            %le                   1
+@ EX               %le                   1
+@ EY               %le                   1
+@ ET               %le               0.001
+@ BV_FLAG          %le                   1
+@ LENGTH           %le                 100
+@ ALFA             %le                   0
+@ ORBIT5           %le                  -0
+@ GAMMATR          %le                   0
+@ Q1               %le       0.03853349451
+@ Q2               %le       0.03853349451
+@ DQ1              %le      -0.04384718845
+@ DQ2              %le      -0.04384718845
+@ DXMAX            %le                   0
+@ DYMAX            %le                   0
+@ XCOMAX           %le                   0
+@ YCOMAX           %le                   0
+@ BETXMAX          %le         463.6232883
+@ BETYMAX          %le         463.6232883
+@ XCORMS           %le                   0
+@ YCORMS           %le                   0
+@ DXRMS            %le                   0
+@ DYRMS            %le                   0
+@ DELTAP           %le                   0
+@ SYNCH_1          %le                   0
+@ SYNCH_2          %le                   0
+@ SYNCH_3          %le                   0
+@ SYNCH_4          %le                   0
+@ SYNCH_5          %le                   0
+@ SYNCH_6          %le                   0
+@ SYNCH_8          %le                   0
+@ DQMIN            %le                   0
+@ DQMIN_PHASE      %le        0.7706482429
+@ TITLE            %08s "no-title"
+@ ORIGIN           %17s "5.09.00 Darwin 64"
+@ DATE             %08s "02/01/24"
+@ TIME             %08s "10.48.01"
+* NAME               KEYWORD                             S               BETX               ALFX                MUX               BETY               ALFY                MUY 
+$ %s                 %s                                %le                %le                %le                %le                %le                %le                %le 
+ "MYCELL$START"      "MARKER"                             0        463.6232883       -1.156108954                  0        369.7791616       0.9293160838                  0
+ "QUADRUPOLE1"       "QUADRUPOLE"                         5        463.6232883        1.156108954     0.001709315266        369.7791616      -0.9293160838     0.002161071335
+ "DRIFT_0"           "DRIFT"                             25        419.3948668        1.055312123     0.008930441989        408.9677416       -1.030112915      0.01034997991
+ "MARKER1"           "MARKER"                            25        419.3948668        1.055312123     0.008930441989        408.9677416       -1.030112915      0.01034997991
+ "DRIFT_1"           "DRIFT"                             50        369.7791616       0.9293160838      0.01904086922        463.6232883       -1.156108954      0.01949262529
+ "QUADRUPOLE2"       "QUADRUPOLE"                        55        369.7791616      -0.9293160838      0.02120194056        463.6232883        1.156108954      0.02120194056
+ "DRIFT_2"           "DRIFT"                             75        408.9677416       -1.030112915      0.02939084913        419.3948668        1.055312123      0.02842306728
+ "MARKER2"           "MARKER"                            75        408.9677416       -1.030112915      0.02939084913        419.3948668        1.055312123      0.02842306728
+ "DRIFT_3"           "DRIFT"                            100        463.6232883       -1.156108954      0.03853349451        369.7791616       0.9293160838      0.03853349451
+ "MYCELL$END"        "MARKER"                           100        463.6232883       -1.156108954      0.03853349451        369.7791616       0.9293160838      0.03853349451

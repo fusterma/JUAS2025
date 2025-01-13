@@ -1,0 +1,129 @@
+! ****************************************************************************
+! Adding sextupoles 
+! ****************************************************************************
+! *********************************************************************
+! Definition of parameters
+! *********************************************************************
+
+l_cell=100;
+
+!! Quadrupole Parameters
+quadrupoleLength=1;
+myKF=0.005;
+myKD:=0.005;
+
+!! Dipole Parameters
+nBend=736;
+dipoleLength=15;
+myAngle:=2*pi/nBend;
+
+!! Sextupole Parameters initially set to 0
+k2f = 0;
+k2d := -k2f;
+sextupoleLength = 0.5;
+
+! *********************************************************************
+! Definition of magnets
+! ********************************************************************* 
+
+QF: quadrupole, L=quadrupoleLength, K1:=myKF;
+QD: quadrupole, L=quadrupoleLength, K1:=-myKD;
+BM: sbend, L=dipoleLength, angle:=myAngle; 
+SF: sextupole, L=sextupoleLength, k2:=k2f;
+SD: sextupole, L=sextupoleLength, k2:=k2d;
+
+! *********************************************************************
+! Definition of sequence
+! *********************************************************************
+
+myCell:sequence, refer=centre, L=l_cell;
+q1: QF, at=0+quadrupoleLength/2;
+S1 : SF, at=quadrupoleLength+sextupoleLength/2;
+B1: BM, at =5+quadrupoleLength/2+dipoleLength/2, from=q1;
+B2: BM, at =5+dipoleLength, from=b1;
+q2: QD, at=l_cell/2+quadrupoleLength/2;
+S2 : SD, at=l_cell/2+quadrupoleLength+sextupoleLength/2;
+B3: BM, at =5+quadrupoleLength/2+dipoleLength/2, from=q2;
+B4: BM, at =5+dipoleLength, from=b3;;
+endsequence;
+
+! *********************************************************************
+! Definition of the beam
+! *********************************************************************
+
+beam, particle=proton, energy=7000;
+
+! *********************************************************************
+! Activation of sequence
+! *********************************************************************
+
+use, sequence=myCell;
+
+! *********************************************************************
+! Makethin
+! *********************************************************************
+
+select, flag=makethin, slice=10;
+makethin, sequence = myCell;
+use, sequence=myCell;
+
+! *********************************************************************
+! Twiss before matching
+! *********************************************************************
+
+twiss, table = beforematching;
+
+! *********************************************************************
+! Matching q1=q2=0.25
+! *********************************************************************
+
+match, sequence=myCell;
+global, q1=0.25;
+global, q2=0.25;
+vary, name=mykf, step=0.00001;
+vary, name=mykd, step=0.00001;
+lmdif, calls=50, tolerance=1e-6;
+endmatch;
+
+! *********************************************************************
+! Twiss after matching
+! *********************************************************************
+
+twiss, table=AfterMatching;
+
+! *********************************************************************
+! Final tune values and chromaticity
+! *********************************************************************
+
+value, table(summ, q1);
+value, table(summ, q1);
+value, table(summ, dq1);
+value, table(summ, dq2);
+
+
+!*************************************************
+!   MATCHING OF THE CHROMATICITY
+!*************************************************
+
+match, sequence=myCell;
+global, dq1=0.0;
+global, dq2=0.0;
+vary, name=k2f, step=0.00001;
+vary, name=k2d, step=0.00001;
+lmdif, calls=50, tolerance=1e-6;
+endmatch;
+
+! *********************************************************************
+! Twiss after matching
+! *********************************************************************
+
+twiss, table=AfterSextupolesMatching;
+
+! *********************************************************************
+! Final tune values and chromaticity
+! *********************************************************************
+
+value, table(summ, q1);
+value, table(summ, q1);
+value, table(summ, dq1);
+value, table(summ, dq2);
