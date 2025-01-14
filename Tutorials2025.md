@@ -99,15 +99,17 @@ The main goals of this tutorial are:
     
 # **Questions:**
     
-1. Compute the required bending angle for the dipoles considering a ring with 736 dipoles with equal bending angles (HINT: $2\pi=N\theta$). 
+1. Install the dipoles in the sequence in the Tutorial2.madx file and run the complete file.
     
-2. Define a proton beam with a total energy, $E_{tot}$, of 7000 GeV. Activate the sequence and change the dipole bending angle to the one computed in question 1. Then, compute the periodic linear optics functions with the twiss command in MAD-X. Do the dipoles (weak focusing) affect the maximum of the $\beta$-functions? And the dispersion?
+2. Compute the required bending angle for the dipoles considering a ring with 736 dipoles with equal bending angles (HINT: $2\pi=N\theta$). 
+    
+3. Define a proton beam with a total energy, $E_{tot}$, of 7000 GeV. Activate the sequence and change the dipole bending angle to the one computed in question 1. Then, compute the periodic linear optics functions with the twiss command in MAD-X. Do the dipoles (weak focusing) affect the maximum of the $\beta$-functions? And the dispersion?
 
-3. From the phase advance of the FODO cell compute the horizontal and vertical tunes of the machine.
+4. From the phase advance of the FODO cell compute the horizontal and vertical tunes of the machine.
     
 **SOLUTIONS**    
     
-4. Using the MAD-X match block on a single FODO cell, match the tunes of the machine to 46.0 in both planes. Don't forget to power the dipoles!
+5. Using the MAD-X match block on a single FODO cell, match the tunes of the machine to 46.0 in both planes. Don't forget to power the dipoles!
 
         match, sequence = ??;
         global, q1 = ??;
@@ -117,9 +119,9 @@ The main goals of this tutorial are:
         lmdif, calls = 50, tolerance = 1e-6;
         endmatch;
            
-5. If we change the beam energy to a total beam energy of 2 GeV, which are the new tunes of the machine? Why?
+6. If we change the beam energy to a total beam energy of 2 GeV, which are the new tunes of the machine? Why?
 
-6. Using the chromaticity computed with MAD-X, compute the tunes for particles with $\Delta p/p = 10^{-3}$ using the following equation:
+7. Using the chromaticity computed with MAD-X, compute the tunes for particles with $\Delta p/p = 10^{-3}$ using the following equation:
 
      $\Delta Q = dq \times \frac{\Delta p}{p}$
 
@@ -137,6 +139,7 @@ The main goals of this tutorial are:
 <div style="flex: 1;">
     <img src="/Figures/Tutorial4_chroma.jpg" style="max-width: 100%;">
 </div>
+    
     
 # **Tutorial 3: Natural chromaticity and correction**
 <div style="font-size: 16px;">

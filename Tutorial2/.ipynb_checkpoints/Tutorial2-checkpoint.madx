@@ -26,11 +26,7 @@ BM: sbend, L=dipoleLength, angle:=myAngle;
 ! ****************************************************************************
 myCell:sequence, refer=entry, L=l_cell;
 q1: QF, at=0;
-b1: BM, at=5+quadrupoleLength/2, from=q1; ! from is w.r.t. the centre of the element
-b2: BM, at=5+dipoleLength/2, from=b1;
 q2: QD, at=l_cell/2;
-b3: BM, at=5+quadrupoleLength/2, from=q2; 
-b4: BM, at=5+dipoleLength/2, from=b3;
 endsequence;
 
 
