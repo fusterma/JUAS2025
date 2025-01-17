@@ -1,5 +1,5 @@
 ! ****************************************************************************
-! Adding dipoles to the Tutorial 2 first FODO lattice
+! Adding dipoles to the Tutorial 1
 ! 
 ! ****************************************************************************
 
@@ -9,8 +9,8 @@
 
 l_cell=100;
 quadrupoleLength=1;
-myKF:=0.005;// m^-2
-myKD:=-myKF;
+myKF=0.005;// m^-2
+myKD=-myKF;
 dipoleLength=15;
 myAngle=0;
 
